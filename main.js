@@ -85,7 +85,10 @@ const addLetter = (letter) => {
     "guessRow-" + currentRow + "-tile-" + currentTile
   );
   tile.textContent = letter;
+  guessRows[currentRow][currentTile] = letter;
   currentTile++;
+
+  console.log("guessRows", guessRows);
 };
 
 keys.forEach((key) => {
