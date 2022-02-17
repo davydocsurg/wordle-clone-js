@@ -35,7 +35,7 @@ const keys = [
   "J",
   "K",
   "L",
-  "<<",
+  "«",
   "Z",
   "X",
   "C",
@@ -77,7 +77,7 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 
 const handleClick = (key) => {
   console.log("clicked", key);
-  if ((letter = "<<")) {
+  if ((letter = "«")) {
     console.log("delete letter");
   }
   addLetter(key);
