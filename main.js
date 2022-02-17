@@ -77,7 +77,7 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 
 const handleClick = (key) => {
   console.log("clicked", key);
-  addLetter(letter);
+  addLetter(key);
 };
 
 const addLetter = (letter) => {
