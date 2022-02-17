@@ -72,7 +72,7 @@ guessRows.forEach((guessRow, guessRowIndex) => {
   tileDisplay.append(rowElement);
 });
 
-const handleClick = () => {
+const handleClick = (key) => {
   console.log("clicked", key);
 };
 
