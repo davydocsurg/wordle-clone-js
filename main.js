@@ -46,6 +46,8 @@ const keys = [
   "ENTER",
 ];
 
+const word = "SUPER";
+
 const guessRows = [
   ["", "", "", "", ""],
   ["", "", "", "", ""],
@@ -69,6 +71,10 @@ guessRows.forEach((guessRow, guessRowIndex) => {
   });
   tileDisplay.append(rowElement);
 });
+
+const handleClick = () => {
+  console.log("clicked", key);
+};
 
 keys.forEach((key) => {
   const buttonElement = document.createElement("button");
