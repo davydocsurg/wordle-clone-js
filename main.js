@@ -77,12 +77,12 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 
 const handleClick = (key) => {
   console.log("clicked", key);
-  if ((key = "«")) {
+  if (key === "«") {
     console.log("delete letter");
     return;
   }
 
-  if ((key = "ENTER")) {
+  if (key === "ENTER") {
     console.log("check row");
     return;
   }
