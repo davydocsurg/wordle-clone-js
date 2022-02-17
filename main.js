@@ -57,6 +57,9 @@ const guessRows = [
   ["", "", "", "", ""],
 ];
 
+let currentRow = 0;
+let currentTile = 0;
+
 guessRows.forEach((guessRow, guessRowIndex) => {
   const rowElement = document.createElement("div");
   rowElement.setAttribute("id", "guessRow-" + guessRowIndex);
@@ -74,6 +77,14 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 
 const handleClick = (key) => {
   console.log("clicked", key);
+  addLetter(letter);
+};
+
+const addLetter = (letter) => {
+  const tile = document.getElementById(
+    "guessRow-" + currentRow + "-tile-" + currentTile
+  );
+  tile.textContent = letter;
 };
 
 keys.forEach((key) => {
