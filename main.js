@@ -79,10 +79,12 @@ const handleClick = (key) => {
   console.log("clicked", key);
   if ((key = "«")) {
     console.log("delete letter");
+    return;
   }
 
   if ((key = "ENTER")) {
     console.log("check row");
+    return;
   }
   addLetter(key);
 };
