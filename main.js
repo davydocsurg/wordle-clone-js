@@ -1,6 +1,13 @@
-import './style.css'
+import "./style.css";
 
-document.querySelector('#app').innerHTML = `
-  <h1>Hello Vite!</h1>
-  <a href="https://vitejs.dev/guide/features.html" target="_blank">Documentation</a>
-`
+document.querySelector("#app").innerHTML = `
+<div class="game-container">
+<div class="title-container">
+  <h1>Wordle</h1>
+</div>
+
+<div class="message-container"></div>
+<div class="tile-container"></div>
+<div class="key-container"></div>
+</div>
+`;
