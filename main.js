@@ -35,15 +35,15 @@ const keys = [
   "J",
   "K",
   "L",
-  "ENTER",
   "Z",
+  "«",
   "X",
   "C",
   "V",
   "B",
   "N",
   "M",
-  "«",
+  "ENTER",
 ];
 
 keys.forEach((key) => {
