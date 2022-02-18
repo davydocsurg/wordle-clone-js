@@ -84,7 +84,7 @@ const handleClick = (key) => {
   }
 
   if (key === "ENTER") {
-    console.log("check row");
+    checkRow();
     return;
   }
   addLetter(key);
@@ -105,6 +105,14 @@ const addLetter = (letter) => {
   // console.log("guessRow", this);
 };
 
+keys.forEach((key) => {
+  const buttonElement = document.createElement("button");
+  buttonElement.textContent = key;
+  buttonElement.setAttribute("id", key);
+  buttonElement.addEventListener("click", () => handleClick(key));
+  keyboard.append(buttonElement);
+});
+
 const deleteLetter = () => {
   if (currentTile > 0) {
     currentTile--;
@@ -117,10 +125,9 @@ const deleteLetter = () => {
   }
 };
 
-keys.forEach((key) => {
-  const buttonElement = document.createElement("button");
-  buttonElement.textContent = key;
-  buttonElement.setAttribute("id", key);
-  buttonElement.addEventListener("click", () => handleClick(key));
-  keyboard.append(buttonElement);
-});
+const checkRow = () => {
+  if (currentTile === 5) {
+    const guess = guessRows[currentRow].join("");
+    console.log("guess == " + guess, "wordle ==" + wordle);
+  }
+};
