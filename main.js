@@ -14,6 +14,7 @@ document.querySelector("#app").innerHTML = `
 
 const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
+let wordle;
 
 const keys = [
   "Q",
