@@ -14,7 +14,7 @@ document.querySelector("#app").innerHTML = `
 
 const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
-let wordle;
+const msgDisplay = document.querySelector(".message-container");
 
 const keys = [
   "Q",
@@ -47,7 +47,7 @@ const keys = [
   "ENTER",
 ];
 
-const word = "SUPER";
+const wordle = "SUPER";
 
 const guessRows = [
   ["", "", "", "", ""],
@@ -127,8 +127,17 @@ const deleteLetter = () => {
 };
 
 const checkRow = () => {
+  const guess = guessRows[currentRow].join("");
   if (currentTile === 5) {
-    const guess = guessRows[currentRow].join("");
     console.log("guess == " + guess, "wordle ==" + wordle);
+    if (wordle == guess) {
+      displayMsg("Superb!");
+    }
   }
+};
+
+const displayMsg = (msg) => {
+  const msgElement = document.createElement("p");
+  msgElement.textContent = msg;
+  msgDisplay.append(msgElement);
 };
