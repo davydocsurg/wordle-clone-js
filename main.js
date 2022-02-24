@@ -183,7 +183,7 @@ const flipTile = () => {
 
   guess.forEach((guess, i) => {
     if (guess.letter == wordle[i]) {
-      guess.color = "yellow-overlay";
+      guess.color = "green-overlay";
       checkWordle = checkWordle.replace(guess.letter, "");
     }
   });
