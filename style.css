@@ -4,13 +4,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60px; */
 }
 
 * {
   color: #ffffff;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 body {
@@ -76,7 +76,9 @@ body {
 }
 
 .message-container {
-  height: 30px;
+  /* height: 120px !important; */
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
 }
 
 .message-container p {
@@ -103,8 +105,6 @@ body {
     transform: rotateX(0deg);
   }
 }
-
-
 
 .grey-overlay {
   background-color: #3a3a3c !important;

@@ -1,4 +1,5 @@
 import "./style.css";
+// import "bootstrap/dist/css/bootstrap.css";
 
 document.querySelector("#app").innerHTML = `
 <div class="game-container">
@@ -60,6 +61,7 @@ const guessRows = [
 
 let currentRow = 0;
 let currentTile = 0;
+let isGameOver = false;
 
 guessRows.forEach((guessRow, guessRowIndex) => {
   const rowElement = document.createElement("div");
@@ -128,16 +130,54 @@ const deleteLetter = () => {
 
 const checkRow = () => {
   const guess = guessRows[currentRow].join("");
-  if (currentTile === 5) {
+  if (currentTile > 4) {
     console.log("guess == " + guess, "wordle ==" + wordle);
+    flipTile();
     if (wordle == guess) {
       displayMsg("Superb!");
+      isGameOver = true;
+      return;
+    }
+  } else {
+    if (currentRow >= 5) {
+      isGameOver = false;
+      displayMsg("Game Over!");
+      return;
+    }
+
+    if (currentRow < 5) {
+      currentRow++;
+      currentTile = 0;
     }
   }
 };
 
 const displayMsg = (msg) => {
   const msgElement = document.createElement("p");
+  msgElement.style.padding = "10px";
+  msgElement.style.zIndex = "2";
   msgElement.textContent = msg;
   msgDisplay.append(msgElement);
+  // hide message after 2s
+  setTimeout(() => {
+    msgDisplay.removeChild(msgElement);
+  }, 2000);
+};
+
+const flipTile = () => {
+  const rowTiles = document.querySelector("#guessRow-" + currentRow).childNodes;
+  rowTiles.forEach((tile, i) => {
+    const dataLetter = tile.getAttribute("data");
+
+    setTimeout(() => {
+      tile.classList.add("flip");
+      if (dataLetter == wordle[i]) {
+        tile.classList.add("green-overlay");
+      } else if (wordle.includes(dataLetter)) {
+        tile.classList.add("yellow-overlay");
+      } else {
+        tile.classList.add("grey-overlay");
+      }
+    }, 500 * i);
+  });
 };
