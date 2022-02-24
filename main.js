@@ -145,9 +145,10 @@ const checkRow = () => {
       return;
     }
 
-    if (currentRow < 4) {
+    if (currentRow < 5) {
       currentRow++;
       currentTile = 0;
+      return;
     }
   }
 };
