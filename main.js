@@ -140,7 +140,7 @@ const checkRow = () => {
     }
   } else {
     if (currentRow >= 5) {
-      isGameOver = false;
+      isGameOver = true;
       displayMsg("Game Over!");
       return;
     }
@@ -148,7 +148,6 @@ const checkRow = () => {
     if (currentRow < 5) {
       currentRow++;
       currentTile = 0;
-      return;
     }
   }
 };
