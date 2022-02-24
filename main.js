@@ -80,17 +80,19 @@ guessRows.forEach((guessRow, guessRowIndex) => {
 
 const handleClick = (key) => {
   console.log("clicked", key);
-  if (key === "«") {
-    deleteLetter();
-    console.log("guessRows", guessRows);
-    return;
-  }
+  if (!isGameOver) {
+    if (key === "«") {
+      deleteLetter();
+      // console.log("guessRows", guessRows);
+      return;
+    }
 
-  if (key === "ENTER") {
-    checkRow();
-    return;
+    if (key === "ENTER") {
+      checkRow();
+      return;
+    }
+    addLetter(key);
   }
-  addLetter(key);
 };
 
 const addLetter = (letter) => {
@@ -104,8 +106,6 @@ const addLetter = (letter) => {
     currentTile++;
     console.log("guessRows", guessRows);
   }
-
-  // console.log("guessRow", this);
 };
 
 keys.forEach((key) => {
