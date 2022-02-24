@@ -145,7 +145,7 @@ const checkRow = () => {
       return;
     }
 
-    if (currentRow < 5) {
+    if (currentRow < 4) {
       currentRow++;
       currentTile = 0;
     }
@@ -164,10 +164,10 @@ const displayMsg = (msg) => {
   }, 2000);
 };
 
-const addColorToKey=(keyLetter, color)=>{
-  const key=document.getElementById(keyLetter)
-  key.classList.add(color)
-}
+const addColorToKey = (keyLetter, color) => {
+  const key = document.getElementById(keyLetter);
+  key.classList.add(color);
+};
 
 const flipTile = () => {
   const rowTiles = document.querySelector("#guessRow-" + currentRow).childNodes;
@@ -178,13 +178,13 @@ const flipTile = () => {
       tile.classList.add("flip");
       if (dataLetter == wordle[i]) {
         tile.classList.add("green-overlay");
-        addColorToKey(dataLetter, 'green-overlay')
+        addColorToKey(dataLetter, "green-overlay");
       } else if (wordle.includes(dataLetter)) {
         tile.classList.add("yellow-overlay");
-        addColorToKey(dataLetter, 'yellow-overlay')
+        addColorToKey(dataLetter, "yellow-overlay");
       } else {
         tile.classList.add("grey-overlay");
-        addColorToKey(dataLetter, 'grey-overlay')
+        addColorToKey(dataLetter, "grey-overlay");
       }
     }, 500 * i);
   });
