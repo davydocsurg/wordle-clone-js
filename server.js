@@ -2,9 +2,10 @@ const PORT = 8000;
 const express = require("express");
 const axios = require("axios").default;
 require("dotenv").config();
-
+const cors = require("cors");
 const server = express();
-server.listen(PORT, () => console.log("server..." + PORT));
+
+server.use(cors());
 
 server.get("/word", (req, res) => {
   const options = {
@@ -50,3 +51,5 @@ server.get("/check", (req, res) => {
       console.error(error);
     });
 });
+
+server.listen(PORT, () => console.log("server..." + PORT));
