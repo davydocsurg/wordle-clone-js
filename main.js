@@ -1,11 +1,10 @@
 import "./style.css";
-let wordle;
 // import "bootstrap/dist/css/bootstrap.css";
 
 document.querySelector("#app").innerHTML = `
 <div class="game-container">
 <div class="title-container">
-  <h1>Wordle</h1>
+<h1>Wordle</h1>
 </div>
 
 <div class="message-container"></div>
@@ -17,6 +16,7 @@ document.querySelector("#app").innerHTML = `
 const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
 const msgDisplay = document.querySelector(".message-container");
+// let wordle;
 
 const getWordle = () => {
   fetch("http://localhost:8000/word")
