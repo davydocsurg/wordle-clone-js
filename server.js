@@ -26,3 +26,26 @@ server.get("/word", (req, res) => {
       console.error(error);
     });
 });
+
+server.get("/check", (req, res) => {
+  console.log(req);
+
+  const options = {
+    method: "GET",
+    url: "https://twinword-word-graph-dictionary.p.rapidapi.com/theme/",
+    params: { entry: "mask" },
+    headers: {
+      "x-rapidapi-host": "twinword-word-graph-dictionary.p.rapidapi.com",
+      "x-rapidapi-key": process.env.RAPID_API_KEY,
+    },
+  };
+
+  axios
+    .request(options)
+    .then((res) => {
+      console.log(res.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+});

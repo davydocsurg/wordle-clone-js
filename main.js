@@ -16,7 +16,6 @@ document.querySelector("#app").innerHTML = `
 const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
 const msgDisplay = document.querySelector(".message-container");
-
 let wordle;
 
 const getWordle = () => {
@@ -24,7 +23,7 @@ const getWordle = () => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
-      wordle = json.toUpperCase();
+      let wordle = json.toUpperCase();
     })
     .catch((err) => {
       console.error(err);
@@ -144,7 +143,15 @@ const deleteLetter = () => {
 
 const checkRow = () => {
   const guess = guessRows[currentRow].join("");
+  console.log(guess);
+
   if (currentTile > 4) {
+    fetch(`http://localhost:8000/check/?word=${guess}`)
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json);
+      });
+
     console.log("guess == " + guess, "wordle ==" + wordle);
     flipTile();
     if (wordle == guess) {
