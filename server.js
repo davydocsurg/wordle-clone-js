@@ -12,7 +12,7 @@ server.get("/word", (req, res) => {
     params: { count: "5" },
     headers: {
       "x-rapidapi-host": "random-words5.p.rapidapi.com",
-      "x-rapidapi-key": "f15efe3bb7msh1d8714d6b1fb975p197df0jsne661aa10aa2d",
+      "x-rapidapi-key": process.env.RAPID_API_KEY,
     },
   };
 
