@@ -17,11 +17,11 @@ const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
 const msgDisplay = document.querySelector(".message-container");
 
-let wordle;
+let wordle = [];
 
 const getWordle = () => {
   fetch("http://localhost:8000/word")
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((json) => {
       console.log(json);
       wordle = json.toUpperCase();
@@ -185,7 +185,7 @@ const addColorToKey = (keyLetter, color) => {
 
 const flipTile = () => {
   const rowTiles = document.querySelector("#guessRow-" + currentRow).childNodes;
-  let checkWordle = wordle;
+  // let checkWordle = wordle;
   const guess = [];
 
   rowTiles.forEach((tile, i) => {
