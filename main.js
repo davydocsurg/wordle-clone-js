@@ -17,6 +17,22 @@ const tileDisplay = document.querySelector(".tile-container");
 const keyboard = document.querySelector(".key-container");
 const msgDisplay = document.querySelector(".message-container");
 
+let wordle;
+
+const getWordle = () => {
+  fetch("http://localhost:8000/word")
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      wordle = json.toUpperCase();
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+};
+
+getWordle()
+
 const keys = [
   "Q",
   "W",
@@ -47,8 +63,6 @@ const keys = [
   "M",
   "ENTER",
 ];
-
-const wordle = "SUPER";
 
 const guessRows = [
   ["", "", "", "", ""],
