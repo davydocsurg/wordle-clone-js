@@ -21,7 +21,7 @@ let wordle;
 
 const getWordle = () => {
   fetch("http://localhost:8000/word")
-    .then((response) => response.json())
+    .then((res) => res.json())
     .then((json) => {
       console.log(json);
       wordle = json.toUpperCase();
@@ -185,7 +185,7 @@ const addColorToKey = (keyLetter, color) => {
 
 const flipTile = () => {
   const rowTiles = document.querySelector("#guessRow-" + currentRow).childNodes;
-  // let checkWordle = wordle;
+  let checkWordle = wordle;
   const guess = [];
 
   rowTiles.forEach((tile, i) => {
