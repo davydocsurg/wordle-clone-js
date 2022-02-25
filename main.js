@@ -341,11 +341,11 @@ const checkRow = () => {
   console.log(guess);
 
   if (currentTile > 4) {
-    fetch(`http://localhost:8000/check/?word=${guess}`)
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-      });
+    // fetch(`http://localhost:8000/check/?word=${guess}`)
+    //   .then((res) => res.json())
+    //   .then((json) => {
+    //     console.log(json);
+    //   });
 
     console.log("guess == " + guess, "wordle ==" + wordle);
     flipTile();
