@@ -20,6 +20,7 @@ server.get("/word", (req, res) => {
     .request(options)
     .then((response) => {
       console.log(response.data);
+      res.json(response.data[0]);
     })
     .catch((error) => {
       console.error(error);
