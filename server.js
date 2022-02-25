@@ -1,6 +1,7 @@
 const PORT = 8000;
 const express = require("express");
 const axios = require("axios").default;
+require("dotenv").config();
 
 const server = express();
 server.listen(PORT, () => console.log("server..." + PORT));
