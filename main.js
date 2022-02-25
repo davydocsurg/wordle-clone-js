@@ -387,7 +387,7 @@ const addColorToKey = (keyLetter, color) => {
 
 const flipTile = () => {
   const rowTiles = document.querySelector("#guessRow-" + currentRow).childNodes;
-  // let checkWordle = wordle;
+  let checkWordle = wordle;
   const guess = [];
 
   rowTiles.forEach((tile, i) => {
